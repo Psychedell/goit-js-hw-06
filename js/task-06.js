@@ -4,29 +4,29 @@ const dataAtributeLength = Number(inputEl.dataset.length);
 
 inputEl.addEventListener("blur", oninputElBlur);
 
-function oninputElBlur(element) {
-  const elementInputLength = element.currentTarget.value.trim().length;
+function oninputElBlur(event) {
+  const elementInputLength = event.currentTarget.value.trim().length;
   if (elementInputLength === dataAtributeLength) {
-    classinvalidRemove(element);
-    classValidAdd(element);
+    classinvalidRemove(event);
+    classValidAdd(event);
   } else {
-    classValidRemove(element);
-    classinvalidAdd(element);
+    classValidRemove(event);
+    classinvalidAdd(event);
   }
 }
 
-function classValidAdd(element) {
-  element.currentTarget.classList.add("valid");
+function classValidAdd(event) {
+  event.currentTarget.classList.add("valid");
 }
 
-function classValidRemove(element) {
-  element.currentTarget.classList.remove("valid");
+function classValidRemove(event) {
+  event.currentTarget.classList.remove("valid");
 }
 
-function classinvalidAdd(element) {
-  element.currentTarget.classList.add("invalid");
+function classinvalidAdd(event) {
+  event.currentTarget.classList.add("invalid");
 }
 
-function classinvalidRemove(element) {
-  element.currentTarget.classList.remove("invalid");
+function classinvalidRemove(event) {
+  event.currentTarget.classList.remove("invalid");
 }
