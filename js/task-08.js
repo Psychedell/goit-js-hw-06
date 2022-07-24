@@ -12,6 +12,11 @@ function onFormSubmit(event) {
   if (email.value === "" || password.value === "") {
     return console.log("Please fill in all fields!");
   }
-  console.log(`Login: ${email.value}, Password: ${password.value}`);
+  // console.log(`Login: ${email.value}, Password: ${password.value}`);
+  const user = {};
+  user.email = email.value;
+  user.value = password.value;
+  console.log(user);
+
   event.currentTarget.reset();
 }

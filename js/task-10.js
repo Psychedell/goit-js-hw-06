@@ -10,18 +10,20 @@ const refs = {
   boxesEl: document.querySelector("#boxes"),
 };
 
-// refs.boxesEl.style.margin = "100px";
-
-// refs.buttonCreateEl.setAttribute("type", "submit");
-
-refs.controlsInputEl.addEventListener("input", boxQuantitytoAdd);
+refs.controlsInputEl.addEventListener("input", getAmount);
 refs.buttonCreateEl.addEventListener("click", createBoxes);
-// refs.buttonDestroyEl.addEventListener('click')
-function boxQuantitytoAdd(event) {
-  return event.currentTarget.value;
+refs.buttonDestroyEl.addEventListener("click", onbuttonDestroyClick);
+
+function onbuttonDestroyClick(element) {
+  refs.boxesEl.innerHTML = "";
 }
 
-function createBoxes(boxQuantitytoAdd) {
+function getAmount(event) {
+  const amount = event.currentTarget.value;
+  console.log(amount);
+}
+
+function createBoxes(amount) {
   let newBox = document.createElement("div");
   newBox.style.height = "30px";
   newBox.style.width = "30px";
@@ -30,13 +32,5 @@ function createBoxes(boxQuantitytoAdd) {
   refs.boxesEl.append(newBox);
   // increaseBoxes();
 
-  for (let i = 0; i <= boxQuantitytoAdd; i += 1) {
-    if (boxQuantitytoAdd > 1) {
-      createBoxes;
-    }
-  }
+  for (let i = 0; i <= amount; i += 1) {}
 }
-
-// function increaseBoxes(boxQuantitytoAdd, createBoxes) {
-//   for (let i = 0; i <= boxQuantitytoAdd; i += 1) {}
-// }
