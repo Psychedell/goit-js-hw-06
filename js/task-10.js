@@ -10,8 +10,8 @@ refs.buttonCreateEl.addEventListener("click", getAmount);
 refs.buttonDestroyEl.addEventListener("click", onbuttonDestroyClick);
 
 function getAmount(event) {
-  const amount = refs.controlsInputEl.value;
-  createBoxes(amount);
+  const currentValue = refs.controlsInputEl.value;
+  createBoxes(currentValue);
 }
 
 function createBoxes(amount) {
