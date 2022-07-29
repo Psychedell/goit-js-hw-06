@@ -18,5 +18,7 @@ function onFormSubmit(event) {
   user.value = password.value;
   console.log(user);
 
+  const newBank = user;
+
   event.currentTarget.reset();
 }
